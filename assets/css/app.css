@@ -99,12 +99,42 @@ main {
     border-radius: 8px;
     padding: 20px;
     width: 500px;
-    height: 300px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
     cursor: pointer;
+    position: relative;
 }
+
+.services-content {
+    border-radius: 10px;
+    background-color: #f7f9fb;
+    color: black;
+    padding-top: 10px;
+    width: 90%;
+    
+}
+
+.service-table {
+    width: 100%;
+    color: #003366;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    font-size: 1.05em;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.service-table td {
+    vertical-align: middle;
+    padding: 8px 10px;
+    border: none;
+}
+
 
 #hosting-web {
     background-image: url("../imgs/hosting-web.png");
@@ -112,8 +142,8 @@ main {
 }
 
 
-#hosting-vps {
-    background-image: url("../imgs/hosting-vps.png");
+#hosting-db {
+    background-image: url("../imgs/hosting-db.png");
     background-size: cover;
 }
 
@@ -145,4 +175,38 @@ main {
 
 footer {
     text-align: center;
+}
+
+/* Estilos para el slider y el botón de contacto */
+.plan-toggle {
+    margin: 20px 0;
+}
+
+.form-check-input {
+    margin: 0 15px;
+}
+
+.form-check-input:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.gap-20p {
+    gap: 20px;
+}
+
+.contact-btn {
+    background-color: #25d366;
+    border-color: #25d366;
+}
+
+.contact-btn:hover {
+    background-color: #128c7e;
+    border-color: #128c7e;
+}
+
+.services-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

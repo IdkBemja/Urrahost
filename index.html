@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urra Hosting - Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
@@ -26,22 +27,124 @@
         </div>
         <div class="services-section" id="services">
             <h2>Servicios</h2>
-            <p>Esta es nuestra lista de Servicios disponibles:</p>
+            <p>Esta es nuestra lista de Servicios disponibles:</p>  
             <div class="services-container">
                 <div class="services-div" id="hosting-web">
-                    <h3>Alojamiento Web</h3>
-                    <p>Planes desde $14.990/mes</p>
-                    <button class="btn btn-secondary">Ver Más</button>
+                    <div class="services-content">
+                        <h3>Alojamiento Web</h3>
+                        <p class="services-subtitle">Un plan de alojamiento web confiable y asequible.</p>
+                        <div class="service-price">
+                            <h4>$14.990</h4>
+                            <p>Precio Base Mensual + IVA</p>
+                        </div>
+                        <p>Los precios pueden cambiar según las necesidades.</p>
+                        <div class="mt-auto">
+                            <button class="btn btn-success contact-btn">
+                                <i class="bi bi-whatsapp me-1"></i> Contactar
+                            </button>
+                        </div>
+                        <table class="service-table">
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-lightning-charge" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">Hasta 30% más potente</span> que otros hosting comunes</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-hdd-network" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">1 Sitio Web Base</span> (Ampliable)</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-database" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td>Acceso a <span class="fw-bold">1 base de datos dedicada</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-headset" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">Soporte 24/7</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-shield-lock" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">SSL Gratuito Let's Encrypt</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-code-slash" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">Soporte a lenguajes</span> como PHP, Python y Node.js</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="services-div" id="hosting-vps">
-                    <h3>Alojamiento VPS</h3>
-                    <p>Planes desde $24.990/mes</p>
-                    <button class="btn btn-secondary">Ver Más</button>
+                <div class="services-div" id="hosting-db">
+                    <div class="services-content">
+                        <h3>Alojamiento Base De Datos</h3>
+                        <p class="services-subtitle">Un plan de alojamiento de base de Datos dedicado y optimizado.</p>
+                        <div class="service-price">
+                            <h4>$9.990</h4>
+                            <p>Precio Base Mensual + IVA</p>
+                        </div>
+                        <div class="mt-auto">
+                            <button class="btn btn-success contact-btn">
+                                <i class="bi bi-whatsapp me-1"></i> Contactar
+                            </button>
+                        </div>
+                        <table class="service-table">
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-database-check" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">Soporte a bases de datos</span> SQL, MySQL y PostgreSQL</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-person-badge" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">1 Cuenta</span> con bases de datos ilimitadas</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-headset" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">Soporte 24/7</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-speedometer" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td><span class="fw-bold">Latencia y respuesta instantánea</span> a los datos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="services-div" id="desarrollo-web">
-                    <h3>Desarrollo Web</h3>
-                    <p>Desde $300.000</p>
-                    <button class="btn btn-secondary">Ver Más</button>
+                    <div class="services-content">
+                        <h3>Desarrollo Web</h3>
+                        <p class="services-subtitle">Haz realidad tus ideas con nuestro servicio de desarrollo web.</p>
+                        <div class="service-price-ecommerces">
+                            <div class="service-price">
+                                <h4>Desde $200.000</h4>
+                                <p>No ECommerce</p>
+                            </div>
+                            <div class="service-price">
+                                <h4>Desde $350.000</h4>
+                                <p>Ecommerce</p>
+                            </div>
+                        </div>
+                        <p>El precio solo es referencial, puede variar según las necesidades del proyecto.</p>
+                        <div class="mt-auto">
+                            <button class="btn btn-success contact-btn">
+                                <i class="bi bi-whatsapp me-1"></i> Contactar
+                            </button>
+                        </div>
+                        <table class="service-table">
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-phone" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td>Diseño de aplicación <span class="fw-bold">Responsive y Llamativa</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-code-slash" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td>Desarrollo con <span class="fw-bold">Lenguajes Modernos</span> y Frameworks</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-patch-check" style="color:#ff4081;font-size:1.3em;"></i></td>
+                                    <td>Cumplimiento con los sellos de calidad y seguridad <span class="fw-bold">ISO 27001, ISO 9001</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,5 +162,4 @@
     <footer>
         <p>La url oficial de Urra Hosting es <a href="https://www.urrahosting.cl">www.urrahosting.cl</a>. Cualquier otra URL no es oficial <br> &copy; 2025 Urra Hosting. Todos los derechos reservados.</p>
     </footer>
-</body>
 </html>
