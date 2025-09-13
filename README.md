@@ -8,6 +8,13 @@ Urra Hosting es un emprendimiento chileno especializado en servicios digitales q
 
 **Sitio Web Oficial:** [https://www.urrahost.app](https://www.urrahost.app)
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Publicado-blue)](https://www.urrahost.app)
+[![Optimizado para SEO](https://img.shields.io/badge/SEO-Optimizado-green)](https://www.urrahost.app)
+
+### Optimizado para GitHub Pages
+
+Este repositorio está configurado para su despliegue automático a través de GitHub Pages. La estructura está optimizada para SEO con metadatos, Schema.org y archivos de configuración necesarios para un rendimiento óptimo en motores de búsqueda.
+
 ## Servicios Principales
 
 ### 🚀 Alojamiento Web
