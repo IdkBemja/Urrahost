@@ -6,24 +6,36 @@
     <title>Urra Hosting - Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="icon" href="assets/imgs/logo.png" type="image/png">
+    <!-- Las hojas de estilos se cargarán dinámicamente según el dispositivo -->
+    <link rel="stylesheet" href="assets/css/app-additions.css">
+    <script src="assets/js/detect-browser.js"></script>
+    <script src="assets/js/whatsapp-contact.js"></script>
 </head>
 <body>
-    <header>
-        <img src="img/logo.png" alt="Urra Hosting Logo">
-        <nav>
-            <ul>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#about">Sobre Nosotros</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="header-wrapper">
+        <header>
+            <div class="logo-container">
+                <img src="assets/imgs/logo.png" alt="Urra Hosting Logo">
+                <h2>Urra Hosting</h2>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="login-btn-container">
+                <a href="https://dashboard.urrahost.app" class="btn login-btn">Panel de Control</a>
+            </div>
+        </header>
+    </div>
     <main>
         <div class="welcome-section">
             <h1>Bienvenido a Urra Hosting</h1>
             <p>Tu solución de alojamiento web confiable y asequible.</p>
-            <button class="btn btn-primary"><a href="#services">Ver Servicios</a></button>
+            <button class="btn btn-info"><a href="#services">Ver Servicios</a></button>
         </div>
         <div class="services-section" id="services">
             <h2>Servicios</h2>
@@ -37,9 +49,9 @@
                             <h4>$14.990</h4>
                             <p>Precio Base Mensual + IVA</p>
                         </div>
-                        <p>Los precios pueden cambiar según las necesidades.</p>
+                        <p class="service-price-info">Los precios pueden cambiar según las necesidades.</p>
                         <div class="mt-auto">
-                            <button class="btn btn-success contact-btn">
+                            <button class="btn btn-success contact-btn" id="contact-web">
                                 <i class="bi bi-whatsapp me-1"></i> Contactar
                             </button>
                         </div>
@@ -82,7 +94,7 @@
                             <p>Precio Base Mensual + IVA</p>
                         </div>
                         <div class="mt-auto">
-                            <button class="btn btn-success contact-btn">
+                            <button class="btn btn-success contact-btn" id="contact-db">
                                 <i class="bi bi-whatsapp me-1"></i> Contactar
                             </button>
                         </div>
@@ -94,7 +106,7 @@
                                 </tr>
                                 <tr>
                                     <td><i class="bi bi-person-badge" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">1 Cuenta</span> con bases de datos ilimitadas</td>
+                                    <td><span class="fw-bold">1 Cuenta</span> con bases de datos <span class="fw-bold">ilimitadas</span></td>
                                 </tr>
                                 <tr>
                                     <td><i class="bi bi-headset" style="color:#ff4081;font-size:1.3em;"></i></td>
@@ -122,9 +134,9 @@
                                 <p>Ecommerce</p>
                             </div>
                         </div>
-                        <p>El precio solo es referencial, puede variar según las necesidades del proyecto.</p>
+                        <p class="service-price-info">El precio solo es referencial, puede variar según las necesidades del proyecto.</p>
                         <div class="mt-auto">
-                            <button class="btn btn-success contact-btn">
+                            <button class="btn btn-success contact-btn" id="contact-development">
                                 <i class="bi bi-whatsapp me-1"></i> Contactar
                             </button>
                         </div>
@@ -148,18 +160,39 @@
                 </div>
             </div>
         </div>
-        <div class="about-section" id="about">
-            <div class="about-text">
-                <h2>Sobre Nosotros</h2>
-                <p>Somos un emprendimiento dedicado a brindar soluciones de alojamiento web de alta calidad y asequibles para nuestros clientes. Atención personalizada y soporte técnico 24/7 para cubrir todas sus necesidades.</p>
-                <p>Como parte de nuestro compromiso, ofrecemos una garantía de satisfacción del 100% en todos nuestros servicios.</p>
+        <div class="about-section-wrapper" style="background-color: white; padding: 40px 0;">
+            <div class="about-section" id="about">
+                <div class="about-text">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Somos un emprendimiento chileno dedicado a brindar soluciones de alojamiento web de alta calidad y asequibles para emprendedores y empresas. Ofrecemos atención personalizada y soporte técnico 24/7 para cubrir todas sus necesidades digitales.</p>
+                    <p>Nuestros servicios incluyen alojamiento web compartido, alojamiento de bases de datos y desarrollo de aplicaciones web a medida, todo con la máxima calidad y al mejor precio.</p>
+                    <p>Como parte de nuestro compromiso, ofrecemos una garantía de satisfacción del 100% en todos nuestros servicios y trabajamos constantemente para mejorar nuestra infraestructura y proporcionar soluciones que impulsen el éxito de nuestros clientes.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/imgs/logo.png" alt="Urra Hosting" title="Urra Hosting - Soluciones Web y Hosting">
+                </div>
             </div>
-            <div class="about-image">
-                <img src="img/about-us.jpg" alt="Sobre Nosotros">
+        </div>
+        <div class="contact-section" id="contact">
+            <div class="contact-text">
+                <h2>Contactanos</h2>
+                <p>¿Tienes alguna pregunta o necesitas más información? No dudes en contactarnos a través de los siguientes medios:</p>
+                <ul>
+                    <li><i class="bi bi-envelope"></i> Email:
+                        <a href="mailto:contact@urrahost.app">contact@urrahost.app</a>
+                    </li>
+                    <li><i class="bi bi-telephone"></i> Teléfono:
+                        <a href="tel:+56937641844">+56 9 3764 1844</a>
+                    </li>
+                    <li><i class="bi bi-whatsapp"> </i><a href="https://wa.me/56937641844" target="_blank">Chat en WhatsApp</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
     <footer>
-        <p>La url oficial de Urra Hosting es <a href="https://www.urrahosting.cl">www.urrahosting.cl</a>. Cualquier otra URL no es oficial <br> &copy; 2025 Urra Hosting. Todos los derechos reservados.</p>
+        <p>La url oficial de Urra Hosting es <a href="https://www.urrahosting.app">www.urrahosting.app</a>. Cualquier otra URL no es oficial <br> &copy; 2025 Urra Hosting. Todos los derechos reservados.</p>
     </footer>
+    <script src="assets/js/detect-browser.js"></script>
+    <script src="assets/js/whatsapp-contact.js"></script>
 </html>
