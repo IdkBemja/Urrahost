@@ -1,6 +1,6 @@
 # Urra Hosting - Soluciones Web
 
-![Urra Hosting Logo](assets/imgs/logo-test.png)
+![Urra Hosting Logo](assets/imgs/logo.png)
 
 ## Acerca del Proyecto
 
