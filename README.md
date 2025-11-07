@@ -6,10 +6,10 @@
 
 Urra Hosting es un emprendimiento chileno especializado en servicios digitales que ofrece soluciones confiables y accesibles para empresas y emprendedores. Este repositorio contiene el código fuente del sitio web oficial.
 
-**Sitio Web Oficial:** [https://www.urrahost.app](https://www.urrahost.app)
+**Sitio Web Oficial:** [https://www.urrahosting.cl](https://www.urrahosting.cl)
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Publicado-blue)](https://www.urrahost.app)
-[![Optimizado para SEO](https://img.shields.io/badge/SEO-Optimizado-green)](https://www.urrahost.app)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Publicado-blue)](https://www.urrahosting.cl)
+[![Optimizado para SEO](https://img.shields.io/badge/SEO-Optimizado-green)](https://www.urrahosting.cl)
 
 ### Optimizado para GitHub Pages
 
@@ -62,7 +62,7 @@ urrahost/
 ## Contacto
 
 Para más información sobre Urra Hosting:
-- Email: contact@urrahost.app
+- Email: contact@urrahosting.cl
 - Teléfono: +56 9 3764 1844
 - WhatsApp: [Chat en WhatsApp](https://wa.me/56937641844)
 
