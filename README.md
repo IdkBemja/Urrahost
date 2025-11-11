@@ -1,8 +1,8 @@
-# 🚀 Urrahost - Servicio de Hosting Profesional en Chile# Urra Hosting - Soluciones Web
+# 🚀 Urrahost - Servicio de Hosting Profesional en Chile - Soluciones Web
 
 
 
-![Urrahost](assets/imgs/logo.png)![Urra Hosting Logo](assets/imgs/logo.png)
+![Urrahost](assets/imgs/logo.png)
 
 
 
