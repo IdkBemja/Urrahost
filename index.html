@@ -21,11 +21,12 @@
     <meta property="og:image:height" content="512">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Alojamiento web en Chile con SSL gratuito, bases de datos y desarrollo web a medida. Soporte 24/7 y planes asequibles.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="icon" href="assets/imgs/logo.png" type="image/png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="assets/css/app-additions.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/animations.js" defer></script>
+    <script src="assets/js/server-activity.js" defer></script>
     <script src="assets/js/detect-browser.js"></script>
     <script src="assets/js/whatsapp-contact.js"></script>
     <script type="application/ld+json">
@@ -92,187 +93,480 @@
     </script>
 </head>
 <body>
-    <div class="header-wrapper">
-        <header>
-            <div class="logo-container">
-                <img src="assets/imgs/logo.png" alt="Urra Hosting Logo">
-                <h2>Urra Hosting</h2>
-            </div>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#about">Sobre Nosotros</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="login-btn-container">
-                <a href="https://dashboard.urrahost.app" class="btn login-btn">Panel de Control</a>
-            </div>
-        </header>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Saltar al contenido principal</a>
+    
+    <!-- Floating Shapes Background -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
     </div>
-    <main>
-        <div class="welcome-section">
-            <h1>Bienvenido a Urra Hosting</h1>
-            <p>Tu solución de alojamiento web confiable y asequible.</p>
-            <button class="btn btn-info"><a href="#services">Ver Servicios</a></button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/imgs/logo.png" alt="Urra Hosting Logo" class="nav-logo">
+                <span class="nav-title">Urra<span class="highlight">Hosting</span></span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link active" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="#services" class="nav-link" role="menuitem">Servicios</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">Nosotros</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contacto</a></li>
+                <li role="none"><a href="https://dashboard.urrahost.app" class="nav-btn" role="menuitem" aria-label="Acceder al panel de control">Panel <i class="bi bi-grid-3x3-gap-fill"></i></a></li>
+            </ul>
         </div>
-        <div class="services-section" id="services">
-            <h2>Servicios</h2>
-            <p>Esta es nuestra lista de Servicios disponibles:</p>  
-            <div class="services-container">
-                <div class="services-div" id="hosting-web">
-                    <div class="services-content">
-                        <h3>Alojamiento Web</h3>
-                        <p class="services-subtitle">Un plan de alojamiento web confiable y asequible.</p>
-                        <div class="service-price">
-                            <h4>$14.990</h4>
-                            <p>Precio Base Mensual + IVA</p>
-                        </div>
-                        <p class="service-price-info">Los precios pueden cambiar según las necesidades.</p>
-                        <div class="mt-auto">
-                            <button class="btn btn-success contact-btn" id="contact-web">
-                                <i class="bi bi-whatsapp me-1"></i> Contactar
-                            </button>
-                        </div>
-                        <table class="service-table">
-                            <tbody>
-                                <tr>
-                                    <td><i class="bi bi-lightning-charge" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">Hasta 30% más potente</span> que otros hosting comunes</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-hdd-network" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td>Sitios Webs <span class="fw-bold">Ilimitados</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-database" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td>Acceso a <span class="fw-bold">1 base de datos</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-headset" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">Soporte 24/7</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-shield-lock" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">SSL Gratuito Let's Encrypt</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-code-slash" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">Soporte a lenguajes</span> como PHP, Python y Node.js</td>
-                                </tr>
-                            </tbody>
-                        </table>
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="landing" id="home" aria-label="Sección de bienvenida">
+        <main id="main-content">
+        <div class="landing-container">
+            <div class="landing-content">
+                <div class="landing-badge" data-animate="fade-up">
+                    <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                    <span>Hosting Profesional en Chile</span>
+                </div>
+                <h1 class="landing-title" data-animate="fade-up" data-delay="100">
+                    Impulsa tu <span class="gradient-text">presencia digital</span> con nuestro hosting
+                </h1>
+                <p class="landing-subtitle" data-animate="fade-up" data-delay="200">
+                    Soluciones de alojamiento web confiables, rápidas y seguras para empresas y emprendedores en Chile. SSL gratuito, soporte 24/7 y tecnología de punta.
+                </p>
+                <div class="landing-actions" data-animate="fade-up" data-delay="300">
+                    <a href="#services" class="btn btn-primary">
+                        Ver Planes
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                        Contactar
+                    </a>
+                </div>
+                <div class="landing-stats" data-animate="fade-up" data-delay="400">
+                    <div class="stat">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Soporte</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">SSL</div>
+                        <div class="stat-label">Gratuito</div>
                     </div>
                 </div>
-                <div class="services-div" id="hosting-db">
-                    <div class="services-content">
-                        <h3>Alojamiento Base De Datos</h3>
-                        <p class="services-subtitle">Un plan de alojamiento de base de Datos dedicado y optimizado.</p>
-                        <div class="service-price">
-                            <h4>$9.990</h4>
-                            <p>Precio Base Mensual + IVA</p>
-                        </div>
-                        <div class="mt-auto">
-                            <button class="btn btn-success contact-btn" id="contact-db">
-                                <i class="bi bi-whatsapp me-1"></i> Contactar
-                            </button>
-                        </div>
-                        <table class="service-table">
-                            <tbody>
-                                <tr>
-                                    <td><i class="bi bi-database-check" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">Soporte a bases de datos</span> MariaDB, MySQL y PostgreSQL</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-person-badge" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">1 Cuenta</span> con bases de datos <span class="fw-bold">ilimitadas</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-headset" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">Soporte 24/7</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-speedometer" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td><span class="fw-bold">Latencia y respuesta instantánea</span> a los datos</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            </div>
+            <div class="landing-visual" data-animate="fade-left" data-delay="200">
+                <div class="visual-card card-1">
+                    <i class="bi bi-server"></i>
+                    <span>Servidores Optimizados</span>
                 </div>
-                <div class="services-div" id="desarrollo-web">
-                    <div class="services-content">
-                        <h3>Desarrollo Web</h3>
-                        <p class="services-subtitle">Haz realidad tus ideas con nuestro servicio de desarrollo web.</p>
-                        <div class="service-price-ecommerces">
-                            <div class="service-price">
-                                <h4>Desde $200.000</h4>
-                                <p>No ECommerce</p>
+                <div class="visual-card card-2">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Seguridad Avanzada</span>
+                </div>
+                <div class="visual-card card-3">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>Alta Velocidad</span>
+                </div>
+                <div class="visual-main">
+                    <img src="assets/imgs/logo.png" alt="Urra Hosting" class="visual-logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-animate="bounce">
+            <i class="bi bi-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-badge">Nuestros Servicios</span>
+                <h2 class="section-title">Soluciones diseñadas para tu <span class="gradient-text">éxito</span></h2>
+                <p class="section-subtitle">Planes flexibles y escalables que se adaptan a tus necesidades</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Hosting Web -->
+                <div class="service-card featured" data-animate="fade-up" data-delay="100">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="bi bi-hdd-network"></i>
+                        </div>
+                        <span class="card-badge">Popular</span>
+                    </div>
+                    <h3 class="card-title">Alojamiento Web</h3>
+                    <p class="card-description">Plan completo de alojamiento web con tecnología de punta</p>
+                    <div class="card-price">
+                        <span class="price-amount">$14.990</span>
+                        <span class="price-period">/mes + IVA</span>
+                    </div>
+                    <ul class="card-features">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>30% más potente</strong> que hosting común</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Sitios web <strong>ilimitados</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Acceso a <strong>1 base de datos</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>SSL Gratuito</strong> Let's Encrypt</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Soporte <strong>PHP, Python, Node.js</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Soporte técnico <strong>24/7</strong></span>
+                        </li>
+                    </ul>
+                    <button class="card-btn contact-trigger" data-service="web">
+                        <i class="bi bi-whatsapp"></i>
+                        Contratar Ahora
+                    </button>
+                </div>
+
+                <!-- Database Hosting -->
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="bi bi-database"></i>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Base de Datos</h3>
+                    <p class="card-description">Alojamiento dedicado y optimizado para tus datos</p>
+                    <div class="card-price">
+                        <span class="price-amount">$9.990</span>
+                        <span class="price-period">/mes + IVA</span>
+                    </div>
+                    <ul class="card-features">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Soporte <strong>MariaDB, MySQL, PostgreSQL</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>1 Cuenta</strong> con BD ilimitadas</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Soporte técnico <strong>24/7</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span><strong>Latencia mínima</strong> y alta velocidad</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Backups automáticos diarios</span>
+                        </li>
+                    </ul>
+                    <button class="card-btn contact-trigger" data-service="db">
+                        <i class="bi bi-whatsapp"></i>
+                        Contratar Ahora
+                    </button>
+                </div>
+
+                <!-- Web Development -->
+                <div class="service-card highlight" data-animate="fade-up" data-delay="300">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <span class="card-badge premium">Premium</span>
+                    </div>
+                    <h3 class="card-title">Desarrollo Web</h3>
+                    <p class="card-description">Haz realidad tus ideas con desarrollo profesional</p>
+                    <div class="card-price-range">
+                        <div class="price-option">
+                            <span class="price-label">Landing / Corporativo</span>
+                            <span class="price-amount">Desde $200.000</span>
+                        </div>
+                        <div class="price-option">
+                            <span class="price-label">E-commerce</span>
+                            <span class="price-amount">Desde $350.000</span>
+                        </div>
+                    </div>
+                    <ul class="card-features">
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Diseño <strong>responsive y moderno</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Desarrollo con <strong>frameworks modernos</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Certificaciones <strong>ISO 27001, ISO 9001</strong></span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>SEO optimizado incluido</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>Mantenimiento y soporte</span>
+                        </li>
+                    </ul>
+                    <button class="card-btn contact-trigger" data-service="development">
+                        <i class="bi bi-whatsapp"></i>
+                        Solicitar Cotización
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content" data-animate="fade-right">
+                    <span class="section-badge">Sobre Nosotros</span>
+                    <h2 class="section-title">Emprendimiento chileno con <span class="gradient-text">visión global</span></h2>
+                    
+                    <div class="about-stats-inline">
+                        <div class="stat-inline">
+                            <strong>100+</strong>
+                            <span>Clientes satisfechos</span>
+                        </div>
+                        <div class="stat-inline">
+                            <strong>99.9%</strong>
+                            <span>Uptime garantizado</span>
+                        </div>
+                        <div class="stat-inline">
+                            <strong>24/7</strong>
+                            <span>Soporte disponible</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-text">
+                        <p><strong>Somos más que un proveedor de hosting.</strong> Somos un emprendimiento chileno dedicado a empoderar a empresas y emprendedores con soluciones de alojamiento web de <span class="text-highlight">alta calidad y asequibles</span>.</p>
+                        <p>Nuestra misión es simple: <span class="text-highlight">democratizar el acceso a tecnología de punta</span> para que cualquier persona o empresa pueda tener presencia digital profesional sin comprometer calidad ni seguridad.</p>
+                        <p>Con atención personalizada, infraestructura de primer nivel y un equipo apasionado, trabajamos 24/7 para que tu proyecto digital crezca sin límites.</p>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="bi bi-award-fill"></i>
+                            <div>
+                                <strong>Certificaciones ISO 27001 & 9001</strong>
+                                <span>Calidad y seguridad garantizada internacionalmente</span>
                             </div>
-                            <div class="service-price">
-                                <h4>Desde $350.000</h4>
-                                <p>Ecommerce</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="bi bi-shield-fill-check"></i>
+                            <div>
+                                <strong>Seguridad Multicapa</strong>
+                                <span>SSL gratuito, backups diarios y protección DDoS</span>
                             </div>
                         </div>
-                        <p class="service-price-info">El precio solo es referencial, puede variar según las necesidades del proyecto.</p>
-                        <div class="mt-auto">
-                            <button class="btn btn-success contact-btn" id="contact-development">
-                                <i class="bi bi-whatsapp me-1"></i> Contactar
-                            </button>
+                        <div class="highlight-item">
+                            <i class="bi bi-headset"></i>
+                            <div>
+                                <strong>Soporte Experto 24/7</strong>
+                                <span>Equipo técnico siempre disponible para ayudarte</span>
+                            </div>
                         </div>
-                        <table class="service-table">
-                            <tbody>
-                                <tr>
-                                    <td><i class="bi bi-phone" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td>Diseño de aplicación <span class="fw-bold">Responsive y Llamativa</span></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-code-slash" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td>Desarrollo con <span class="fw-bold">Lenguajes Modernos</span> y Frameworks</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="bi bi-patch-check" style="color:#ff4081;font-size:1.3em;"></i></td>
-                                    <td>Cumplimiento con los sellos de calidad y seguridad <span class="fw-bold">ISO 27001, ISO 9001</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <p class="cta-text">"Nuestro compromiso: <strong>garantía de satisfacción del 100%</strong> en todos nuestros servicios."</p>
+                    </div>
+                </div>
+                <div class="about-visual" data-animate="fade-left">
+                    <div class="visual-wrapper">
+                        <div class="panda-container">
+                            <img src="assets/imgs/logo.png" alt="Urra Hosting" class="about-image panda-logo" loading="lazy">
+                        </div>
+                        <div class="visual-decoration decoration-1"></div>
+                        <div class="visual-decoration decoration-2"></div>
+                        <div class="visual-decoration decoration-3"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="about-section-wrapper" style="background-color: white; padding: 40px 0;">
-            <div class="about-section" id="about">
-                <div class="about-text">
-                    <h2>Sobre Nosotros</h2>
-                    <p>Somos un emprendimiento chileno dedicado a brindar soluciones de alojamiento web de alta calidad y asequibles para emprendedores y empresas. Ofrecemos atención personalizada y soporte técnico 24/7 para cubrir todas sus necesidades digitales.</p>
-                    <p>Nuestros servicios incluyen alojamiento web compartido, alojamiento de bases de datos y desarrollo de aplicaciones web a medida, todo con la máxima calidad y al mejor precio.</p>
-                    <p>Como parte de nuestro compromiso, ofrecemos una garantía de satisfacción del 100% en todos nuestros servicios y trabajamos constantemente para mejorar nuestra infraestructura y proporcionar soluciones que impulsen el éxito de nuestros clientes.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info" data-animate="fade-right">
+                    <span class="section-badge">Contacto</span>
+                    <h2 class="section-title">¿Listo para <span class="gradient-text">comenzar?</span></h2>
+                    <p class="contact-description">Estamos aquí para ayudarte a llevar tu proyecto al siguiente nivel. Contáctanos y descubre cómo podemos impulsar tu presencia digital.</p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:contact@urrahosting.cl" class="contact-method">
+                            <div class="method-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">contact@urrahosting.cl</span>
+                            </div>
+                        </a>
+                        <a href="tel:+56937641844" class="contact-method">
+                            <div class="method-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Teléfono</span>
+                                <span class="method-value">+56 9 3764 1844</span>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/56937641844" target="_blank" class="contact-method featured">
+                            <div class="method-icon">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">WhatsApp</span>
+                                <span class="method-value">Chat directo</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="assets/imgs/logo.png" alt="Urra Hosting" title="Urra Hosting - Soluciones Web y Hosting">
+                <div class="contact-cta" data-animate="fade-left">
+                    <div class="cta-card">
+                        <i class="bi bi-rocket-takeoff"></i>
+                        <h3>Comienza tu proyecto hoy</h3>
+                        <p>Nuestro equipo está listo para asesorarte y encontrar la mejor solución para tus necesidades.</p>
+                        <a href="https://wa.me/56937641844" target="_blank" class="btn btn-primary btn-lg">
+                            <i class="bi bi-whatsapp"></i>
+                            Chatear por WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="contact-section" id="contact">
-            <div class="contact-text">
-                <h2>Contactanos</h2>
-                <p>¿Tienes alguna pregunta o necesitas más información? No dudes en contactarnos a través de los siguientes medios:</p>
-                <ul>
-                    <li><i class="bi bi-envelope"></i> Email:
-                        <a href="mailto:contact@urrahosting.cl">contact@urrahosting.cl</a>
-                    </li>
-                    <li><i class="bi bi-telephone"></i> Teléfono:
-                        <a href="tel:+56937641844">+56 9 3764 1844</a>
-                    </li>
-                    <li><i class="bi bi-whatsapp"> </i><a href="https://wa.me/56937641844" target="_blank">Chat en WhatsApp</a>
-                    </li>
-                </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo" aria-label="Pie de página">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <img src="assets/imgs/logo.png" alt="Urra Hosting" class="footer-logo" loading="lazy">
+                        <span class="footer-title">Urra<span class="highlight">Hosting</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Soluciones de hosting profesional en Chile. Potenciamos tu presencia digital con tecnología de punta y soporte excepcional.
+                    </p>
+                    <div class="footer-certifications" aria-label="Certificaciones">
+                        <div class="cert-badge">
+                            <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+                            <span>ISO 27001</span>
+                        </div>
+                        <div class="cert-badge">
+                            <i class="bi bi-award-fill" aria-hidden="true"></i>
+                            <span>ISO 9001</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Column -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="bi bi-chevron-right"></i> Alojamiento Web</a></li>
+                        <li><a href="#services"><i class="bi bi-chevron-right"></i> Base de Datos</a></li>
+                        <li><a href="#services"><i class="bi bi-chevron-right"></i> Desarrollo Web</a></li>
+                        <li><a href="https://dashboard.urrahost.app"><i class="bi bi-chevron-right"></i> Panel de Control</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="bi bi-chevron-right"></i> Sobre Nosotros</a></li>
+                        <li><a href="#contact"><i class="bi bi-chevron-right"></i> Contacto</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Términos y Condiciones</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Política de Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="bi bi-envelope-fill"></i>
+                            <a href="mailto:contact@urrahosting.cl">contact@urrahosting.cl</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill"></i>
+                            <a href="tel:+56937641844">+56 9 3764 1844</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-whatsapp"></i>
+                            <a href="https://wa.me/56937641844" target="_blank">WhatsApp Chat</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Chile 🇨🇱</span>
+                        </li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="https://wa.me/56937641844" target="_blank" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="mailto:contact@urrahosting.cl" aria-label="Email">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        &copy; 2025 <strong>Urra Hosting</strong>. Todos los derechos reservados.
+                    </p>
+                    <div class="footer-legal">
+                        <p class="footer-official">
+                            La URL oficial es <a href="https://www.urrahosting.cl" target="_blank">www.urrahosting.cl</a>
+                        </p>
+                        <p class="footer-warning">Cualquier otra URL no es oficial</p>
+                    </div>
+                    <p class="footer-love">
+                        Hecho con <i class="bi bi-heart-fill"></i> en Chile
+                    </p>
+                </div>
             </div>
         </div>
-    </main>
-    <footer>
-        <p>La url oficial de Urra Hosting es <a href="https://www.urrahosting.cl">www.urrahosting.cl</a>. Cualquier otra URL no es oficial <br> &copy; 2025 Urra Hosting. Todos los derechos reservados.</p>
     </footer>
-    <script src="assets/js/detect-browser.js"></script>
+
     <script src="assets/js/whatsapp-contact.js"></script>
     
     <script type="application/ld+json">
