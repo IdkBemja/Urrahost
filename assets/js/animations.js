@@ -321,14 +321,3 @@ serviceCards.forEach((card) => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
     });
 });
-
-// ==================== Console Message ====================
-console.log(
-    '%c🚀 Urra Hosting ',
-    'background: linear-gradient(135deg, #F97316 0%, #EA580C 100%); color: white; padding: 10px 20px; font-size: 20px; font-weight: bold; border-radius: 5px;'
-);
-console.log('%c✨ Diseñado con tecnología moderna y amor', 'color: #F97316; font-size: 14px;');
-console.log(
-    '%c💼 ¿Interesado en nuestros servicios? Contáctanos en https://wa.me/56937641844',
-    'color: #666; font-size: 12px;'
-);
