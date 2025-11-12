@@ -42,6 +42,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
+<<<<<<< Updated upstream
 // ==================== Mobile Navigation Toggle ====================
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
@@ -62,6 +63,8 @@ navLinks.forEach(link => {
     });
 });
 
+=======
+>>>>>>> Stashed changes
 // ==================== Active Navigation Link ====================
 const sections = document.querySelectorAll('section[id]');
 

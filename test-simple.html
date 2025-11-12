@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test Simple - Menú Móvil</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                padding-top: 80px;
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-brand {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .nav-toggle {
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                z-index: 1002;
+            }
+
+            .nav-toggle-line {
+                width: 25px;
+                height: 3px;
+                background: #333;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+                display: block;
+            }
+
+            .nav-toggle.active .nav-toggle-line:nth-child(1) {
+                transform: rotate(45deg) translate(7px, 7px);
+            }
+
+            .nav-toggle.active .nav-toggle-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active .nav-toggle-line:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-link {
+                color: #333;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                transition: color 0.3s;
+            }
+
+            .nav-link:hover {
+                color: #f97316;
+            }
+
+            /* Estilos móvil */
+            @media (max-width: 768px) {
+                .nav-toggle {
+                    display: flex;
+                }
+
+                .nav-menu {
+                    position: fixed;
+                    top: 70px;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    background: white;
+                    flex-direction: column;
+                    padding: 2rem;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    transform: translateY(-100%);
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+                    pointer-events: none;
+                    z-index: 1001;
+                    gap: 0;
+                }
+
+                .nav-menu.active {
+                    transform: translateY(0);
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: all;
+                }
+
+                .nav-menu li {
+                    width: 100%;
+                    margin: 0;
+                    border-bottom: 1px solid #eee;
+                }
+
+                .nav-menu li:last-child {
+                    border-bottom: none;
+                }
+
+                .nav-link {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    padding: 1rem;
+                }
+            }
+
+            .content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .alert {
+                padding: 1rem;
+                background: #e3f2fd;
+                border-left: 4px solid #2196f3;
+                margin-bottom: 1rem;
+            }
+
+            .success {
+                background: #e8f5e9;
+                border-left-color: #4caf50;
+            }
+
+            .warning {
+                background: #fff3e0;
+                border-left-color: #ff9800;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">Test Menú</div>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Inicio</a></li>
+                    <li><a href="#services" class="nav-link">Servicios</a></li>
+                    <li><a href="#about" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+            <h1>Prueba de Menú Móvil</h1>
+
+            <div class="alert warning">
+                <strong>📱 Instrucciones:</strong><br />
+                1. Presiona F12 para abrir DevTools<br />
+                2. Presiona Ctrl+Shift+M para modo responsive<br />
+                3. Reduce el ancho a menos de 768px<br />
+                4. Deberías ver el botón hamburguesa (☰)<br />
+                5. Haz clic para desplegar el menú
+            </div>
+
+            <div class="alert" id="status">
+                <strong>Estado:</strong> <span id="statusText">Verificando...</span>
+            </div>
+
+            <div class="alert success" style="display: none" id="successMsg">
+                <strong>✅ ¡Funciona!</strong> El menú se está desplegando correctamente.
+            </div>
+        </div>
+
+        <script>
+            console.log('🔍 Script iniciado');
+
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const statusText = document.getElementById('statusText');
+            const successMsg = document.getElementById('successMsg');
+
+            if (navToggle && navMenu) {
+                statusText.textContent = '✅ Elementos encontrados correctamente';
+                console.log('✅ navToggle y navMenu encontrados');
+
+                navToggle.addEventListener('click', function (e) {
+                    console.log('🖱️ Click detectado');
+
+                    // Toggle clases
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+
+                    const isActive = navMenu.classList.contains('active');
+                    console.log('Estado del menú:', isActive ? 'ABIERTO' : 'CERRADO');
+
+                    // Actualizar aria-expanded
+                    navToggle.setAttribute('aria-expanded', isActive);
+
+                    // Mostrar mensaje de éxito
+                    if (isActive) {
+                        successMsg.style.display = 'block';
+                    } else {
+                        successMsg.style.display = 'none';
+                    }
+
+                    // Verificar estilos computados
+                    const menuStyles = window.getComputedStyle(navMenu);
+                    console.log('📊 Estilos del menú:');
+                    console.log('  - transform:', menuStyles.transform);
+                    console.log('  - opacity:', menuStyles.opacity);
+                    console.log('  - visibility:', menuStyles.visibility);
+                    console.log('  - z-index:', menuStyles.zIndex);
+                    console.log('  - position:', menuStyles.position);
+                });
+
+                // Cerrar menú al hacer click en un enlace
+                const navLinks = navMenu.querySelectorAll('.nav-link');
+                navLinks.forEach((link) => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        successMsg.style.display = 'none';
+                    });
+                });
+            } else {
+                statusText.textContent = '❌ Error: No se encontraron los elementos';
+                console.error('❌ No se encontraron navToggle o navMenu');
+            }
+
+            // Verificar ancho de ventana
+            function checkWidth() {
+                const width = window.innerWidth;
+                const isMobile = width < 768;
+                console.log(`📐 Ancho: ${width}px - ${isMobile ? 'MÓVIL' : 'DESKTOP'}`);
+            }
+
+            checkWidth();
+            window.addEventListener('resize', checkWidth);
+        </script>
+    </body>
+</html>
