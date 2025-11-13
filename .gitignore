@@ -1,13 +1,126 @@
-# Archivos del sistema
-.DS_Store
-Thumbs.db
+# ====================================================================================
+# Urra Hosting - .gitignore
+# ====================================================================================
 
-# Archivos de configuración local
+# Archivos del Sistema Operativo
+# --------------------------------------------------
+.DS_Store              # macOS
+Thumbs.db              # Windows
+Desktop.ini            # Windows
+ehthumbs.db            # Windows
+$RECYCLE.BIN/          # Windows
+
+# Archivos Temporales y Logs
+# --------------------------------------------------
 *.log
 *.bak
+*.backup
+*.old
 *.swp
+*.swo
 *.tmp
+*.temp
+*.cache
+*~
 
-# Archivos de dependencias
+# Editores e IDEs
+# --------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.code-workspace
+*.code-workspace
+
+# Dependencias
+# --------------------------------------------------
 node_modules/
 vendor/
+bower_components/
+
+# Archivos CSS Originales (solo backup local, no producción)
+# --------------------------------------------------
+# Mantener solo archivos minificados en repo
+assets/css/backup/
+# Descomentar si prefieres subir el backup al repo:
+# !assets/css/backup/README.md
+
+# Archivos de Environment y Configuración Sensible
+# --------------------------------------------------
+.env
+.env.local
+.env.*.local
+config.local.js
+secrets.json
+
+# Archivos de Build y Distribución (si usas build tools)
+# --------------------------------------------------
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Testing y Coverage
+# --------------------------------------------------
+coverage/
+.nyc_output/
+*.test.js.snap
+
+# Archivos de Debug y Profiling
+# --------------------------------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Archivos de Verificación de Terceros
+# --------------------------------------------------
+# Google verificación (mantener solo si es necesario)
+# google*.html
+
+# Archivos de Sistema de Control de Versiones
+# --------------------------------------------------
+.git/
+.svn/
+.hg/
+
+# Backups de Base de Datos (si los hay)
+# --------------------------------------------------
+*.sql
+*.sqlite
+*.db
+
+# Uploads de Usuario (si implementas subida de archivos)
+# --------------------------------------------------
+# uploads/
+# !uploads/.gitkeep
+
+# Service Worker Cache (generado dinámicamente)
+# --------------------------------------------------
+# sw-cache/
+# workbox-*.js
+
+# Archivos de Análisis y Reportes
+# --------------------------------------------------
+stats.json
+bundle-analyzer-report.html
+
+# Certificados SSL (NUNCA subir al repo)
+# --------------------------------------------------
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+
+# Archivos Comprimidos (generalmente builds)
+# --------------------------------------------------
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ====================================================================================
+# Fin del .gitignore
+# ====================================================================================

@@ -90,9 +90,3 @@ class ServerActivity {
         this.createBars();
     }
 }
-
-// ==================== INICIALIZACIÓN ====================
-document.addEventListener('DOMContentLoaded', () => {
-    new ServerActivity();
-    console.log('%c🚀 Server Activity Background Loaded', 'background: #F97316; color: white; padding: 8px; font-weight: bold;');
-});

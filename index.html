@@ -28,7 +28,7 @@
         />
         <meta property="og:url" content="https://www.urrahosting.cl/" />
         <meta property="og:site_name" content="Urra Hosting" />
-        <meta property="og:image" content="https://www.urrahosting.cl/assets/imgs/logo.png" />
+        <meta property="og:image" content="https://www.urrahosting.cl/assets/imgs/logo.webp" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -40,14 +40,17 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
         />
-        <link rel="icon" href="assets/imgs/logo.png" type="image/png" />
+        <link rel="icon" href="assets/imgs/logo.webp" type="image/webp" />
         <link rel="manifest" href="site.webmanifest" />
-        <link rel="stylesheet" href="assets/css/app.css" />
+        
+        <!-- CSS cargado dinámicamente por detect-browser.js según el dispositivo -->
+        <!-- detect-browser.js se ejecuta primero (sin defer) para evitar FOUC -->
+        <script src="assets/js/detect-browser.js"></script>
+        
+        <!-- Scripts secundarios con defer para no bloquear el render -->
         <script src="assets/js/animations.js" defer></script>
         <script src="assets/js/server-activity.js" defer></script>
-        <script src="assets/js/mobile-menu.js" defer></script>
-        <script src="assets/js/detect-browser.js"></script>
-        <script src="assets/js/whatsapp-contact.js"></script>
+        <script src="assets/js/whatsapp-contact.js" defer></script>
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -56,7 +59,7 @@
                 "url": "https://www.urrahosting.cl",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://www.urrahosting.cl/assets/imgs/logo.png",
+                    "url": "https://www.urrahosting.cl/assets/imgs/logo.webp",
                     "width": "512",
                     "height": "512"
                 },
@@ -122,7 +125,7 @@
         <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/imgs/logo.png" alt="Urra Hosting Logo" class="nav-logo" />
+                    <img src="assets/imgs/logo.webp" alt="Urra Hosting Logo" class="nav-logo" />
                     <span class="nav-title">Urra<span class="highlight">Hosting</span></span>
                 </div>
                 <button
@@ -218,7 +221,7 @@
                         </div>
                         <div class="visual-main">
                             <img
-                                src="assets/imgs/logo.png"
+                                src="assets/imgs/logo.webp"
                                 alt="Urra Hosting"
                                 class="visual-logo"
                                 loading="lazy"
@@ -516,7 +519,7 @@
                             <div class="visual-wrapper">
                                 <div class="panda-container">
                                     <img
-                                        src="assets/imgs/logo.png"
+                                        src="assets/imgs/logo.webp"
                                         alt="Urra Hosting"
                                         class="about-image panda-logo"
                                         loading="lazy"
@@ -636,7 +639,7 @@
                     <div class="footer-column">
                         <div class="footer-brand">
                             <img
-                                src="assets/imgs/logo.png"
+                                src="assets/imgs/logo.webp"
                                 alt="Urra Hosting"
                                 class="footer-logo"
                                 loading="lazy"
