@@ -17,7 +17,7 @@ const PRECACHE_URLS = [
     '/assets/js/error-handler.js',
     '/assets/js/webp-handler.js',
     '/assets/js/animations.js',
-    '/assets/imgs/logo.png',
+    '/assets/imgs/logo.webp',
     '/manifest.json',
     '/offline.html'
 ];
@@ -175,8 +175,8 @@ self.addEventListener('push', event => {
     
     const options = {
         body: event.data ? event.data.text() : 'Nueva notificación',
-        icon: '/assets/imgs/logo.png',
-        badge: '/assets/imgs/logo.png',
+        icon: '/assets/imgs/logo.webp',
+        badge: '/assets/imgs/logo.webp',
         vibrate: [200, 100, 200],
         data: {
             dateOfArrival: Date.now(),

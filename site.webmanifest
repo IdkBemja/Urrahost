@@ -4,7 +4,7 @@
     "description": "Servicios de alojamiento web y desarrollo en Chile",
     "icons": [
         {
-            "src": "assets/imgs/logo.png",
+            "src": "assets/imgs/logo.webp",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
