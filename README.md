@@ -1,6 +1,6 @@
 # 🚀 Urrahost - Servicio de Hosting Profesional en Chile - Soluciones Web
 
-![Urrahost](assets/imgs/logo.png)
+![Urrahost](assets/imgs/logo.webp)
 
 
 ## 📋 Acerca del Proyecto
