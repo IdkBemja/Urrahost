@@ -1,10 +1,15 @@
 /**
  * Service Worker - Urra Hosting
  * Cache strategy for offline support and performance
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
-const CACHE_NAME = 'urrahost-v1.0.0';
+// Production mode - set to false to disable logging
+const DEBUG = false;
+const log = DEBUG ? console.log.bind(console) : () => {};
+const logError = DEBUG ? console.error.bind(console) : () => {};
+
+const CACHE_NAME = 'urrahost-v1.0.1';
 const RUNTIME_CACHE = 'urrahost-runtime';
 
 // Files to cache immediately on install
@@ -13,6 +18,7 @@ const PRECACHE_URLS = [
     '/index.html',
     '/assets/css/app.min.css',
     '/assets/css/mobile-app.min.css',
+    '/assets/css/dark-theme.min.css',
     '/assets/js/detect-browser.js',
     '/assets/js/error-handler.js',
     '/assets/js/webp-handler.js',
@@ -24,24 +30,24 @@ const PRECACHE_URLS = [
 
 // Install event - cache essential files
 self.addEventListener('install', event => {
-    console.log('[SW] Installing Service Worker...');
+    log('[SW] Installing Service Worker...');
     
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('[SW] Precaching essential files');
+                log('[SW] Precaching essential files');
                 return cache.addAll(PRECACHE_URLS);
             })
             .then(() => self.skipWaiting())
             .catch(error => {
-                console.error('[SW] Precache failed:', error);
+                logError('[SW] Precache failed:', error);
             })
     );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
-    console.log('[SW] Activating Service Worker...');
+    log('[SW] Activating Service Worker...');
     
     event.waitUntil(
         caches.keys()
@@ -52,7 +58,7 @@ self.addEventListener('activate', event => {
                             return cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE;
                         })
                         .map(cacheName => {
-                            console.log('[SW] Deleting old cache:', cacheName);
+                            log('[SW] Deleting old cache:', cacheName);
                             return caches.delete(cacheName);
                         })
                 );
@@ -80,7 +86,7 @@ self.addEventListener('fetch', event => {
         caches.match(request)
             .then(cachedResponse => {
                 if (cachedResponse) {
-                    console.log('[SW] Serving from cache:', request.url);
+                    log('[SW] Serving from cache:', request.url);
                     return cachedResponse;
                 }
 
@@ -101,7 +107,7 @@ self.addEventListener('fetch', event => {
                         if (shouldCache(request.url)) {
                             caches.open(RUNTIME_CACHE)
                                 .then(cache => {
-                                    console.log('[SW] Caching runtime file:', request.url);
+                                    log('[SW] Caching runtime file:', request.url);
                                     cache.put(request, responseToCache);
                                 });
                         }
@@ -109,7 +115,7 @@ self.addEventListener('fetch', event => {
                         return response;
                     })
                     .catch(error => {
-                        console.error('[SW] Fetch failed:', error);
+                        logError('[SW] Fetch failed:', error);
                         
                         // Return offline page for navigation requests
                         if (request.mode === 'navigate') {
@@ -135,12 +141,12 @@ function shouldCache(url) {
 // Message event - handle commands from clients
 self.addEventListener('message', event => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
-        console.log('[SW] Skip waiting requested');
+        log('[SW] Skip waiting requested');
         self.skipWaiting();
     }
 
     if (event.data && event.data.type === 'CACHE_URLS') {
-        console.log('[SW] Caching additional URLs');
+        log('[SW] Caching additional URLs');
         event.waitUntil(
             caches.open(RUNTIME_CACHE)
                 .then(cache => cache.addAll(event.data.urls))
@@ -148,7 +154,7 @@ self.addEventListener('message', event => {
     }
 
     if (event.data && event.data.type === 'CLEAR_CACHE') {
-        console.log('[SW] Clearing runtime cache');
+        log('[SW] Clearing runtime cache');
         event.waitUntil(
             caches.delete(RUNTIME_CACHE)
         );
@@ -157,7 +163,7 @@ self.addEventListener('message', event => {
 
 // Background sync for offline actions
 self.addEventListener('sync', event => {
-    console.log('[SW] Background sync:', event.tag);
+    log('[SW] Background sync:', event.tag);
     
     if (event.tag === 'sync-analytics') {
         event.waitUntil(syncAnalytics());
@@ -166,12 +172,12 @@ self.addEventListener('sync', event => {
 
 async function syncAnalytics() {
     // Implement analytics sync logic here
-    console.log('[SW] Syncing analytics data');
+    log('[SW] Syncing analytics data');
 }
 
 // Push notification support (optional)
 self.addEventListener('push', event => {
-    console.log('[SW] Push notification received');
+    log('[SW] Push notification received');
     
     const options = {
         body: event.data ? event.data.text() : 'Nueva notificación',
@@ -203,7 +209,7 @@ self.addEventListener('push', event => {
 
 // Notification click handler
 self.addEventListener('notificationclick', event => {
-    console.log('[SW] Notification clicked:', event.action);
+    log('[SW] Notification clicked:', event.action);
     
     event.notification.close();
 
@@ -214,4 +220,4 @@ self.addEventListener('notificationclick', event => {
     }
 });
 
-console.log('[SW] Service Worker loaded');
+log('[SW] Service Worker loaded');
