@@ -42,10 +42,12 @@
         />
         <link rel="icon" href="assets/imgs/logo.webp" type="image/webp" />
         <link rel="manifest" href="site.webmanifest" />
+        <meta name="theme-color" content="#f97316" />
         
         <!-- CSS cargado dinámicamente por detect-browser.js según el dispositivo -->
         <!-- detect-browser.js se ejecuta primero (sin defer) para evitar FOUC -->
         <script src="assets/js/detect-browser.js"></script>
+        <script src="assets/js/dark-mode.js"></script>
         
         <!-- Scripts secundarios con defer para no bloquear el render -->
         <script src="assets/js/animations.js" defer></script>
@@ -150,6 +152,17 @@
                     </li>
                     <li role="none">
                         <a href="#contact" class="nav-link" role="menuitem">Contacto</a>
+                    </li>
+                    <li role="none">
+                        <button
+                            id="theme-toggle"
+                            class="theme-toggle"
+                            aria-label="Cambiar tema"
+                            title="Cambiar tema claro/oscuro"
+                        >
+                            <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+                            <i class="bi bi-sun-fill theme-icon-light"></i>
+                        </button>
                     </li>
                     <li role="none">
                         <a
