@@ -24,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Buscar hojas de estilo existentes
             let mobileStylesheet = document.querySelector('link[href*="mobile-app"]');
             let desktopStylesheet = document.querySelector('link[href*="app"]:not([href*="mobile"])');
+            let darkThemeStylesheet = document.querySelector('link[href*="dark-theme"]');
+            
+            // Crear dark theme stylesheet si no existe
+            if (!darkThemeStylesheet) {
+                darkThemeStylesheet = document.createElement('link');
+                darkThemeStylesheet.rel = 'stylesheet';
+                darkThemeStylesheet.href = 'assets/css/dark-theme.min.css';
+                darkThemeStylesheet.onerror = function() {
+                    // Dark theme is optional
+                };
+                head.appendChild(darkThemeStylesheet);
+            }
             
             // Crear mobile stylesheet minificado si no existe
             if (!mobileStylesheet) {
@@ -32,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileStylesheet.href = 'assets/css/mobile-app.min.css';
                 mobileStylesheet.media = '(max-width: 1023px)';
                 mobileStylesheet.onerror = function() {
-                    console.error('[ERROR] Failed to load mobile CSS - Critical error');
                     if (window.ErrorHandler) {
                         window.ErrorHandler.logError('CSS Critical', { file: 'mobile-app.min.css' });
                     }
@@ -47,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 desktopStylesheet.href = 'assets/css/app.min.css';
                 desktopStylesheet.media = '(min-width: 1024px)';
                 desktopStylesheet.onerror = function() {
-                    console.error('[ERROR] Failed to load desktop CSS - Critical error');
                     if (window.ErrorHandler) {
                         window.ErrorHandler.logError('CSS Critical', { file: 'app.min.css' });
                     }
@@ -66,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 removeMobileMenu();
             }
             
-            console.log(`[SUCCESS] CSS loaded successfully: ${isMobile ? 'Mobile' : 'Desktop'} mode`);
         } catch (error) {
-            console.error('[ERROR] Error in loadAppropriateStylesheet:', error);
             // Fallback: Load basic CSS
             if (window.ErrorHandler) {
                 window.ErrorHandler.logError('CSS Loading Error', {

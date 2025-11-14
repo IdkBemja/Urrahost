@@ -8,7 +8,7 @@
 
     // Check if service workers are supported
     if (!('serviceWorker' in navigator)) {
-        console.warn('⚠️ Service Workers not supported in this browser');
+        console.warn('Service Workers not supported in this browser');
         return;
     }
 
@@ -23,12 +23,12 @@
                     scope: '/'
                 });
 
-                console.log('✅ Service Worker registered:', this.registration.scope);
+                console.log('Service Worker registered:', this.registration.scope);
 
                 // Check for updates
                 this.registration.addEventListener('updatefound', () => {
                     const newWorker = this.registration.installing;
-                    console.log('🔄 New Service Worker found, installing...');
+                    console.log('New Service Worker found, installing...');
 
                     newWorker.addEventListener('statechange', () => {
                         if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
@@ -40,7 +40,7 @@
 
                 // Listen for controller change
                 navigator.serviceWorker.addEventListener('controllerchange', () => {
-                    console.log('🔄 Service Worker controller changed');
+                    console.log('Service Worker controller changed');
                     window.location.reload();
                 });
 
@@ -50,22 +50,22 @@
                 }, 1000 * 60 * 60);
 
             } catch (error) {
-                console.error('❌ Service Worker registration failed:', error);
+                console.error('Service Worker registration failed:', error);
             }
         },
 
         // Show update notification
         showUpdateNotification() {
-            console.log('📢 New version available');
+            console.log('New version available');
 
             // Create notification banner
             const banner = document.createElement('div');
             banner.className = 'sw-update-banner';
             banner.innerHTML = `
                 <div class="sw-update-content">
-                    <span>✨ Nueva versión disponible</span>
+                    <span>Nueva versión disponible</span>
                     <button class="sw-update-button" onclick="SWManager.applyUpdate()">Actualizar</button>
-                    <button class="sw-dismiss-button" onclick="this.parentElement.parentElement.remove()">✕</button>
+                    <button class="sw-dismiss-button" onclick="this.parentElement.parentElement.remove()">×</button>
                 </div>
             `;
 
@@ -168,7 +168,7 @@
         async clearCache() {
             if (this.registration) {
                 this.registration.active.postMessage({ type: 'CLEAR_CACHE' });
-                console.log('🧹 Cache cleared');
+                console.log('Cache cleared');
             }
         },
 
@@ -176,7 +176,7 @@
         async unregister() {
             if (this.registration) {
                 await this.registration.unregister();
-                console.log('✅ Service Worker unregistered');
+                console.log('Service Worker unregistered');
             }
         }
     };
@@ -199,7 +199,7 @@
             clearCache: () => SWManager.clearCache(),
             info: () => SWManager.registration
         };
-        console.log('🔧 SW Debug commands: debugSW.update(), debugSW.unregister(), debugSW.clearCache(), debugSW.info()');
+        console.log('SW Debug commands: debugSW.update(), debugSW.unregister(), debugSW.clearCache(), debugSW.info()');
     }
 
 })();

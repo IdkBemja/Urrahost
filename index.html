@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Urra Hosting - Alojamiento web confiable y desarrollo | Chile</title>
+        <title>UrraHosting - Alojamiento web confiable y desarrollo | Chile</title>
         <link rel="canonical" href="https://www.urrahosting.cl/" />
         <meta
             name="description"
@@ -13,7 +13,7 @@
             name="keywords"
             content="hosting Chile, alojamiento web, desarrollo web, bases de datos, SSL gratuito, hospedaje web, sitio web, soporte 24/7"
         />
-        <meta name="author" content="Urra Hosting" />
+        <meta name="author" content="UrraHosting" />
         <meta name="robots" content="index, follow" />
         <meta
             name="google-site-verification"
@@ -21,13 +21,13 @@
         />
         <meta property="og:locale" content="es_CL" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Urra Hosting — Alojamiento web confiable y desarrollo" />
+        <meta property="og:title" content="UrraHosting — Alojamiento web confiable y desarrollo" />
         <meta
             property="og:description"
             content="Planes de hosting con SSL gratuito, soporte 24/7 y soluciones a medida para tu proyecto."
         />
         <meta property="og:url" content="https://www.urrahosting.cl/" />
-        <meta property="og:site_name" content="Urra Hosting" />
+        <meta property="og:site_name" content="UrraHosting" />
         <meta property="og:image" content="https://www.urrahosting.cl/assets/imgs/logo.webp" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
@@ -42,10 +42,12 @@
         />
         <link rel="icon" href="assets/imgs/logo.webp" type="image/webp" />
         <link rel="manifest" href="site.webmanifest" />
+        <meta name="theme-color" content="#f97316" />
         
         <!-- CSS cargado dinámicamente por detect-browser.js según el dispositivo -->
         <!-- detect-browser.js se ejecuta primero (sin defer) para evitar FOUC -->
         <script src="assets/js/detect-browser.js"></script>
+        <script src="assets/js/dark-mode.js"></script>
         
         <!-- Scripts secundarios con defer para no bloquear el render -->
         <script src="assets/js/animations.js" defer></script>
@@ -152,6 +154,17 @@
                         <a href="#contact" class="nav-link" role="menuitem">Contacto</a>
                     </li>
                     <li role="none">
+                        <button
+                            id="theme-toggle"
+                            class="theme-toggle"
+                            aria-label="Cambiar tema"
+                            title="Cambiar tema claro/oscuro"
+                        >
+                            <i class="bi bi-moon-stars-fill theme-icon-dark"></i>
+                            <i class="bi bi-sun-fill theme-icon-light"></i>
+                        </button>
+                    </li>
+                    <li role="none">
                         <a
                             href="https://dashboard.urrahost.app"
                             class="nav-btn"
@@ -184,10 +197,10 @@
                         <div class="landing-actions" data-animate="fade-up" data-delay="300">
                             <a href="#services" class="btn btn-primary">
                                 Ver Planes
-                                <i class="bi bi-arrow-right"></i>
+                                <i class="bi bi-arrow-right" aria-hidden="true"></i>
                             </a>
                             <a href="#contact" class="btn btn-outline btn-whatsapp">
-                                <i class="bi bi-whatsapp"></i>
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
                                 Contactar
                             </a>
                         </div>
@@ -208,15 +221,15 @@
                     </div>
                     <div class="landing-visual" data-animate="fade-left" data-delay="200">
                         <div class="visual-card card-1">
-                            <i class="bi bi-server"></i>
+                            <i class="bi bi-server" aria-hidden="true"></i>
                             <span>Servidores Optimizados</span>
                         </div>
                         <div class="visual-card card-2">
-                            <i class="bi bi-shield-check"></i>
+                            <i class="bi bi-shield-check" aria-hidden="true"></i>
                             <span>Seguridad Avanzada</span>
                         </div>
                         <div class="visual-card card-3">
-                            <i class="bi bi-speedometer2"></i>
+                            <i class="bi bi-speedometer2" aria-hidden="true"></i>
                             <span>Alta Velocidad</span>
                         </div>
                         <div class="visual-main">
@@ -229,8 +242,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="scroll-indicator" data-animate="bounce">
-                    <i class="bi bi-chevron-down"></i>
+                <div class="scroll-indicator" data-animate="bounce" aria-label="Desplazarse hacia abajo">
+                    <i class="bi bi-chevron-down" aria-hidden="true"></i>
                 </div>
             </section>
 
@@ -248,22 +261,22 @@
                     </div>
 
                     <div class="services-grid">
-                        <div class="service-card featured" data-animate="fade-up" data-delay="100">
-                            <div class="card-header">
-                                <div class="card-icon">
+                        <article class="service-card featured" data-animate="fade-up" data-delay="100" aria-labelledby="card-alojamiento-web">
+                            <header class="card-header">
+                                <div class="card-icon" aria-hidden="true">
                                     <i class="bi bi-hdd-network"></i>
                                 </div>
-                                <span class="card-badge">Popular</span>
-                            </div>
-                            <h3 class="card-title">Alojamiento Web</h3>
+                                <span class="card-badge" role="status">Popular</span>
+                            </header>
+                            <h3 id="card-alojamiento-web" class="card-title">Alojamiento Web</h3>
                             <p class="card-description">
                                 Plan completo de alojamiento web con tecnología de punta
                             </p>
-                            <div class="card-price">
-                                <span class="price-amount">$14.990</span>
-                                <span class="price-period">/mes + IVA</span>
+                            <div class="card-price" aria-label="Precio: 14.990 pesos chilenos mensuales más IVA">
+                                <span class="price-amount" aria-hidden="true">$14.990</span>
+                                <span class="price-period" aria-hidden="true">/mes + IVA</span>
                             </div>
-                            <ul class="card-features">
+                            <ul class="card-features" aria-label="Características incluidas">
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
                                     <span><strong>30% más potente</strong> que hosting común</span>
@@ -293,100 +306,100 @@
                                 <i class="bi bi-whatsapp"></i>
                                 Contratar Ahora
                             </button>
-                        </div>
+                        </article>
 
-                        <div class="service-card" data-animate="fade-up" data-delay="200">
-                            <div class="card-header">
-                                <div class="card-icon">
+                        <article class="service-card" data-animate="fade-up" data-delay="200" aria-labelledby="card-base-datos">
+                            <header class="card-header">
+                                <div class="card-icon" aria-hidden="true">
                                     <i class="bi bi-database"></i>
                                 </div>
-                            </div>
-                            <h3 class="card-title">Base de Datos</h3>
+                            </header>
+                            <h3 id="card-base-datos" class="card-title">Base de Datos</h3>
                             <p class="card-description">
                                 Alojamiento dedicado y optimizado para tus datos
                             </p>
-                            <div class="card-price">
-                                <span class="price-amount">$9.990</span>
-                                <span class="price-period">/mes + IVA</span>
+                            <div class="card-price" aria-label="Precio: 9.990 pesos chilenos mensuales más IVA">
+                                <span class="price-amount" aria-hidden="true">$9.990</span>
+                                <span class="price-period" aria-hidden="true">/mes + IVA</span>
                             </div>
-                            <ul class="card-features">
+                            <ul class="card-features" aria-label="Características incluidas">
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>Soporte <strong>MariaDB, MySQL, PostgreSQL</strong></span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span><strong>1 Cuenta</strong> con BD ilimitadas</span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>Soporte técnico <strong>24/7</strong></span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span><strong>Latencia mínima</strong> y alta velocidad</span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>Backups automáticos diarios</span>
                                 </li>
                             </ul>
-                            <button class="card-btn contact-trigger" data-service="db">
-                                <i class="bi bi-whatsapp"></i>
+                            <button class="card-btn contact-trigger" data-service="db" aria-label="Contratar plan de Base de Datos por WhatsApp">
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
                                 Contratar Ahora
                             </button>
-                        </div>
+                        </article>
 
-                        <div class="service-card highlight" data-animate="fade-up" data-delay="300">
-                            <div class="card-header">
-                                <div class="card-icon">
+                        <article class="service-card highlight" data-animate="fade-up" data-delay="300" aria-labelledby="card-desarrollo-web">
+                            <header class="card-header">
+                                <div class="card-icon" aria-hidden="true">
                                     <i class="bi bi-code-slash"></i>
                                 </div>
-                                <span class="card-badge premium">Premium</span>
-                            </div>
-                            <h3 class="card-title">Desarrollo Web</h3>
+                                <span class="card-badge premium" role="status">Premium</span>
+                            </header>
+                            <h3 id="card-desarrollo-web" class="card-title">Desarrollo Web</h3>
                             <p class="card-description">
                                 Haz realidad tus ideas con desarrollo profesional
                             </p>
-                            <div class="card-price-range">
-                                <div class="price-option">
-                                    <span class="price-label">Landing / Corporativo</span>
-                                    <span class="price-amount">Desde $200.000</span>
+                            <div class="card-price-range" aria-label="Opciones de precios">
+                                <div class="price-option" aria-label="Landing o sitio corporativo desde 200.000 pesos chilenos">
+                                    <span class="price-label" aria-hidden="true">Landing / Corporativo</span>
+                                    <span class="price-amount" aria-hidden="true">Desde $200.000</span>
                                 </div>
-                                <div class="price-option">
-                                    <span class="price-label">E-commerce</span>
-                                    <span class="price-amount">Desde $350.000</span>
+                                <div class="price-option" aria-label="E-commerce desde 350.000 pesos chilenos">
+                                    <span class="price-label" aria-hidden="true">E-commerce</span>
+                                    <span class="price-amount" aria-hidden="true">Desde $350.000</span>
                                 </div>
                             </div>
-                            <ul class="card-features">
+                            <ul class="card-features" aria-label="Características incluidas">
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>Diseño <strong>responsive y moderno</strong></span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>Desarrollo con <strong>frameworks modernos</strong></span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span
                                         >Comprometidos con <strong>calidad y seguridad</strong></span
                                     >
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>SEO optimizado incluido</span>
                                 </li>
                                 <li>
-                                    <i class="bi bi-check-circle-fill"></i>
+                                    <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
                                     <span>Mantenimiento y soporte</span>
                                 </li>
                             </ul>
-                            <button class="card-btn contact-trigger" data-service="development">
-                                <i class="bi bi-whatsapp"></i>
+                            <button class="card-btn contact-trigger" data-service="development" aria-label="Solicitar cotización de Desarrollo Web por WhatsApp">
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
                                 Solicitar Cotización
                             </button>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </section>
