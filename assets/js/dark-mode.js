@@ -29,6 +29,16 @@
      * Aplica el tema al documento
      */
     function applyTheme(theme) {
+        // Verificar que el CSS del tema oscuro esté cargado
+        if (theme === 'dark') {
+            const darkThemeLoaded = document.querySelector('link[href*="dark-theme"]');
+            if (!darkThemeLoaded) {
+                // Esperar a que se cargue el CSS del tema oscuro
+                setTimeout(() => applyTheme(theme), 100);
+                return;
+            }
+        }
+        
         document.documentElement.setAttribute('data-theme', theme);
         
         // Update meta theme-color para mobile
@@ -87,9 +97,15 @@
      * Inicialización
      */
     function init() {
-        // Aplicar tema guardado inmediatamente (antes de DOMContentLoaded)
+        // Aplicar tema guardado después de un breve delay para permitir carga de CSS
         const savedTheme = getSavedTheme();
-        applyTheme(savedTheme);
+        
+        // Si es tema oscuro, esperar un momento para que se cargue el CSS
+        if (savedTheme === 'dark') {
+            setTimeout(() => applyTheme(savedTheme), 50);
+        } else {
+            applyTheme(savedTheme);
+        }
         
         // Esperar a que el DOM esté listo
         if (document.readyState === 'loading') {
@@ -111,7 +127,7 @@
         const toggleButton = document.getElementById('theme-toggle');
         
         if (!toggleButton) {
-            console.warn('Botón de theme toggle no encontrado');
+            // Theme toggle button not found - skip setup
             return;
         }
         
